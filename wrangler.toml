@@ -1,9 +1,9 @@
 name = "site-creator-vinext-starter"
-compatibility_date = "2024-09-23"
+compatibility_date = "2025-01-01"
+compatibility_flags = ["nodejs_compat", "nodejs_compat_v2"]
 
 [[d1_databases]]
 binding = "DB"
 database_name = "zeliy-pakistan-db"
 database_id = "e8f5c063-b6eb-4d13-96a2-17e96f5dc315"
 migrations_dir = "drizzle"
-

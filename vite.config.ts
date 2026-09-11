@@ -13,7 +13,8 @@ const isCodexSeatbeltSandbox = process.env.CODEX_SANDBOX === "seatbelt";
 
 const localBindingConfig = {
   main: "./worker/index.ts",
-  compatibility_flags: ["nodejs_compat"],
+  compatibility_date: "2025-01-01",
+  compatibility_flags: ["nodejs_compat", "nodejs_compat_v2"],
   r2_buckets: r2
     ? [
         {
@@ -35,6 +36,14 @@ export default defineConfig(async () => {
   const { cloudflare } = await import("@cloudflare/vite-plugin");
 
   return {
+    // The local Cloudflare edge runtime used by Vinext does not currently
+    // expose WeakRef, while React's RSC renderer references it directly.
+    // Keep this shim local to the Vite dev/build bundle; production runtimes
+    // that provide WeakRef continue to use the native implementation.
+    define: {
+      WeakRef:
+        "globalThis.WeakRef ?? class { constructor() {} deref() { return undefined; } }",
+    },
     server: {
       host: "0.0.0.0",
       allowedHosts: ["terminal.local"],
