@@ -1,4 +1,4 @@
-export const categories = ["All products", "Fashion", "Beauty & Care", "Home & Kitchen", "Electronics", "Accessories"];
+export const categories = ["All products", "Fashion", "Shoes", "Dresses", "Bags", "Lingerie", "Kids", "Sports & Fitness", "Jewellery", "Men's Fashion", "Beauty & Care", "Home & Kitchen", "Electronics", "Accessories"];
 export const products = [
 {id:"everyday-headphones",name:"Everyday Wireless Headphones",category:"Electronics",price:3490,old:4990,image:"headphones",tag:"Best seller",description:"Your daily soundtrack, wherever you go. A comfortable over-ear design with simple wireless controls and a clean, minimal finish.",features:["Wireless listening", "Adjustable padded headband", "Includes charging cable"]},
 {id:"classic-handbag",name:"The Everyday Shoulder Bag",category:"Accessories",price:2790,old:3990,image:"bag",tag:"New arrival",description:"A polished finishing touch for workdays and weekends. A roomy everyday silhouette keeps your essentials close.",features:["Everyday carry size", "Easy-access closure", "Adjustable shoulder strap"]},
