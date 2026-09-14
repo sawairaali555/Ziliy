@@ -1,0 +1,627 @@
+/* Mobile-first CSS for COD Landing Page */
+:root {
+  --lp-primary: #203664;
+  --lp-accent-gold: #bc8053;
+  --lp-cta-orange: #f54900;
+  --lp-cta-orange-hover: #d13d00;
+  --lp-stars: #f5a623;
+  --lp-bg-light: #f9fafc;
+  --lp-text-dark: #333333;
+  --lp-text-light: #666666;
+  --lp-border: #e0e0e0;
+}
+
+/* Reset and Base Styles */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--lp-text-dark);
+  margin: 0;
+  padding: 0;
+  background-color: #fff;
+  line-height: 1.5;
+  padding-bottom: 80px; /* Space for sticky bar */
+}
+
+.lp-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+/* Typography */
+.lp-title {
+  color: var(--lp-primary);
+  font-weight: 700;
+  font-size: 24px;
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+.lp-subtitle {
+  color: var(--lp-text-light);
+  font-size: 16px;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+/* Animations */
+@keyframes lp-pulse {
+  0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(245, 73, 0, 0.7); }
+  70% { transform: scale(1.05); box-shadow: 0 0 0 10px rgba(245, 73, 0, 0); }
+  100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(245, 73, 0, 0); }
+}
+
+@keyframes lp-flash {
+  0%, 50%, 100% { opacity: 1; }
+  25%, 75% { opacity: 0; }
+}
+
+/* Buttons */
+.lp-btn {
+  display: block;
+  width: 100%;
+  background-color: var(--lp-cta-orange);
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 16px 24px;
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+  cursor: pointer;
+  min-height: 48px;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  animation: lp-pulse 2s infinite;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+.lp-btn:hover {
+  background-color: var(--lp-cta-orange-hover);
+}
+
+/* 1. Hero Section */
+.lp-hero {
+  background: linear-gradient(180deg, rgba(32,54,100,0.05) 0%, rgba(255,255,255,1) 100%);
+  padding: 40px 0 32px;
+  text-align: center;
+}
+
+.lp-hero img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 24px;
+  border-radius: 12px;
+}
+
+.lp-hero h1 {
+  font-size: 28px;
+  color: var(--lp-primary);
+  margin: 0 0 16px 0;
+  line-height: 1.2;
+  font-weight: 800;
+}
+
+.lp-price-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.lp-price-new {
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--lp-cta-orange);
+}
+
+.lp-price-old {
+  font-size: 18px;
+  color: #999;
+  text-decoration: line-through;
+}
+
+.lp-discount-badge {
+  background-color: var(--lp-accent-gold);
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/* 2. Trust Bar */
+.lp-trust {
+  background-color: var(--lp-bg-light);
+  padding: 16px 0;
+  border-top: 1px solid var(--lp-border);
+  border-bottom: 1px solid var(--lp-border);
+}
+
+.lp-trust-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  text-align: center;
+}
+
+.lp-trust-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--lp-primary);
+}
+
+.lp-trust-icon {
+  font-size: 24px;
+}
+
+/* 3. Product Highlights */
+.lp-features {
+  padding: 40px 0;
+}
+
+.lp-features-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+.lp-feature-card {
+  background: white;
+  border: 1px solid var(--lp-border);
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+}
+
+.lp-feature-icon {
+  background-color: rgba(188, 128, 83, 0.1);
+  color: var(--lp-accent-gold);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  flex-shrink: 0;
+}
+
+.lp-feature-content h3 {
+  margin: 0 0 8px 0;
+  font-size: 16px;
+  color: var(--lp-primary);
+}
+
+.lp-feature-content p {
+  margin: 0;
+  font-size: 14px;
+  color: var(--lp-text-light);
+}
+
+/* 4. Gallery */
+.lp-gallery {
+  padding: 40px 0;
+  background-color: var(--lp-bg-light);
+}
+
+.lp-gallery-scroll {
+  display: flex;
+  overflow-x: auto;
+  gap: 16px;
+  padding-bottom: 16px;
+  scroll-snap-type: x mandatory;
+}
+
+.lp-gallery-scroll::-webkit-scrollbar {
+  height: 8px;
+}
+
+.lp-gallery-scroll::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 4px;
+}
+
+.lp-gallery-item {
+  flex: 0 0 85%;
+  scroll-snap-align: center;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.lp-gallery-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* 5. Why Choose Us */
+.lp-why {
+  padding: 40px 0;
+}
+
+.lp-why-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.lp-why-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 16px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.lp-why-check {
+  color: var(--lp-cta-orange);
+  font-size: 20px;
+  line-height: 1.2;
+}
+
+/* 6. Reviews */
+.lp-reviews {
+  padding: 40px 0;
+  background-color: var(--lp-bg-light);
+}
+
+.lp-reviews-summary {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.lp-stars {
+  color: var(--lp-stars);
+  font-size: 24px;
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+}
+
+.lp-review-card {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.lp-review-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.lp-review-name {
+  font-weight: bold;
+  color: var(--lp-primary);
+}
+
+.lp-review-date {
+  font-size: 12px;
+  color: var(--lp-text-light);
+}
+
+.lp-review-text {
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.lp-review-verified {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: #4CAF50;
+  font-size: 12px;
+  font-weight: bold;
+  margin-top: 12px;
+}
+
+/* 7. Order Form */
+.lp-order {
+  padding: 40px 0;
+  background-color: white;
+  border-top: 1px solid var(--lp-border);
+}
+
+.lp-order-form {
+  background-color: var(--lp-bg-light);
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(32,54,100,0.08);
+}
+
+.lp-form-group {
+  margin-bottom: 16px;
+}
+
+.lp-form-group label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--lp-primary);
+  margin-bottom: 8px;
+}
+
+.lp-form-control {
+  width: 100%;
+  padding: 12px 16px;
+  font-size: 16px;
+  border: 1px solid var(--lp-border);
+  border-radius: 8px;
+  background-color: white;
+  color: var(--lp-text-dark);
+  box-sizing: border-box;
+  font-family: inherit;
+}
+
+.lp-form-control:focus {
+  outline: none;
+  border-color: var(--lp-primary);
+  box-shadow: 0 0 0 2px rgba(32,54,100,0.1);
+}
+
+.lp-order-summary {
+  background-color: white;
+  border: 1px dashed var(--lp-accent-gold);
+  border-radius: 8px;
+  padding: 16px;
+  margin: 24px 0;
+}
+
+.lp-summary-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.lp-summary-total {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--lp-border);
+  font-weight: bold;
+  font-size: 18px;
+  color: var(--lp-primary);
+}
+
+/* 8. FAQ */
+.lp-faq {
+  padding: 40px 0;
+  background-color: var(--lp-bg-light);
+}
+
+.lp-faq-item {
+  background: white;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+}
+
+.lp-faq-question {
+  padding: 16px 20px;
+  font-weight: bold;
+  color: var(--lp-primary);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.lp-faq-question::after {
+  content: '+';
+  font-size: 20px;
+  color: var(--lp-accent-gold);
+  font-weight: normal;
+}
+
+.lp-faq-answer {
+  padding: 0 20px 16px;
+  font-size: 14px;
+  color: var(--lp-text-light);
+  display: none;
+}
+
+.lp-faq-active .lp-faq-answer {
+  display: block;
+}
+
+.lp-faq-active .lp-faq-question::after {
+  content: '-';
+}
+
+/* 9. Sticky Bottom Bar */
+.lp-sticky {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: white;
+  padding: 12px 16px;
+  box-shadow: 0 -4px 10px rgba(0,0,0,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 100;
+}
+
+.lp-sticky-price {
+  display: flex;
+  flex-direction: column;
+}
+
+.lp-sticky-price .new {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--lp-primary);
+  line-height: 1;
+}
+
+.lp-sticky-price .old {
+  font-size: 12px;
+  color: #999;
+  text-decoration: line-through;
+  margin-top: 4px;
+}
+
+.lp-sticky .lp-btn {
+  width: auto;
+  min-width: 150px;
+  padding: 12px 24px;
+  font-size: 16px;
+}
+
+/* 10. Countdown Timer */
+.lp-countdown {
+  background-color: var(--lp-primary);
+  color: white;
+  padding: 16px;
+  text-align: center;
+  border-radius: 8px;
+  margin: 16px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.lp-countdown-text {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+.lp-countdown-timer {
+  display: flex;
+  gap: 16px;
+}
+
+.lp-countdown-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.lp-countdown-value {
+  background: white;
+  color: var(--lp-primary);
+  font-size: 24px;
+  font-weight: bold;
+  padding: 8px 12px;
+  border-radius: 6px;
+  min-width: 48px;
+  box-sizing: border-box;
+}
+
+.lp-countdown-label {
+  font-size: 10px;
+  margin-top: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* 11. Limited Stock Badge */
+.lp-urgency {
+  background-color: rgba(245, 73, 0, 0.1);
+  border: 1px solid var(--lp-cta-orange);
+  color: var(--lp-cta-orange);
+  padding: 8px 16px;
+  border-radius: 20px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: bold;
+  font-size: 14px;
+  margin-bottom: 16px;
+  animation: lp-flash 2s infinite;
+}
+
+/* Responsive Queries */
+@media (min-width: 768px) {
+  .lp-trust-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  
+  .lp-features-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .lp-gallery-item {
+    flex: 0 0 45%;
+  }
+  
+  .lp-order-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    align-items: start;
+  }
+  
+  .lp-hero {
+    padding: 60px 0;
+  }
+  
+  .lp-hero h1 {
+    font-size: 40px;
+  }
+  
+  .lp-btn {
+    animation: none; /* Less aggressive on desktop */
+  }
+  
+  .lp-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(245, 73, 0, 0.3);
+  }
+  
+  .lp-sticky {
+    padding: 16px 32px;
+    justify-content: center;
+    gap: 40px;
+  }
+  
+  .lp-sticky .lp-btn {
+    min-width: 250px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .lp-features-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  
+  .lp-gallery-item {
+    flex: 0 0 30%;
+  }
+  
+  .lp-hero {
+    padding: 80px 0;
+  }
+  
+  .lp-hero h1 {
+    font-size: 48px;
+  }
+}
