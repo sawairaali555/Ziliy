@@ -1,8 +1,8 @@
 @import "tailwindcss";
 @import "./category-nav.css";
-@import "./hide-filter.css";
 @import "tw-animate-css";
 @import "../vendor/shadcn-tailwind-4.13.0.css";
+.filter-row{display:none}
 
 @utility scrollbar-thin {
   scrollbar-width: thin;
